@@ -1,0 +1,5 @@
+host: localhost
+user: postgres
+dbname: sales_data
+password: 12345
+port: 5432
