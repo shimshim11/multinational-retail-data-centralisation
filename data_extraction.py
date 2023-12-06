@@ -56,7 +56,7 @@ class DataExtractor():
         response = requests.get(stores_endpoint, headers=headers)
         return int(response.text[37:40])
 
-    def retrieve_stores_data(endpoint, headers):
+    def retrieve_stores_data(self, endpoint, headers):
         '''
         This function retrieves the store data by calling the API endpoint.
 

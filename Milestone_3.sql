@@ -1,7 +1,7 @@
 /* Task 1: orders_table */
 ALTER TABLE orders_table
-    ALTER COLUMN date_uuid TYPE uuid USING date_uuid::uuid;
-    ALTER COLUMN user_uuid TYPE uuid USING user_uuid::uuid;
+    ALTER COLUMN date_uuid TYPE uuid USING date_uuid::uuid,
+    ALTER COLUMN user_uuid TYPE uuid USING user_uuid::uuid,
     ALTER COLUMN card_number TYPE VARCHAR(30),
     ALTER COLUMN store_code TYPE VARCHAR(15),
     ALTER COLUMN product_code TYPE VARCHAR(15),
@@ -50,12 +50,12 @@ UPDATE dim_products
 ALTER TABLE dim_products RENAME removed TO still_available;
 
 ALTER TABLE dim_products
-    ALTER COLUMN product_price TYPE FLOAT USING product_price::FLOAT,
-    ALTER COLUMN weight TYPE FLOAT,
+    ALTER COLUMN product_price TYPE FLOAT USING product_price::double precision,
+    ALTER COLUMN weight TYPE FLOAT USING weight::double precision,
     ALTER COLUMN "EAN" TYPE VARCHAR(20),
     ALTER COLUMN product_code TYPE VARCHAR(15),
     ALTER COLUMN date_added TYPE DATE,
-    ALTER COLUMN "uuid" TYPE uuid USING "uuid":uuid,
+    ALTER COLUMN uuid TYPE uuid USING uuid:uuid,
     ALTER COLUMN still_available TYPE bool USING still_available:bool
     ALTER COLUMN weight_class TYPE VARCHAR(25);
 

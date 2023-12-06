@@ -54,10 +54,9 @@ def upload_date_times():
     clean_date_df = DataCleaning.clean_date_times(date_times)
     reader.upload_to_db(clean_date_df, 'dim_date_times')
 
-#if __name__ == '__main__':
 #upload_dim_users()
 #upload_card_details()
-#upload_store_details()
+upload_store_details()
 #upload_products()
 #upload_orders()
 #upload_orders()

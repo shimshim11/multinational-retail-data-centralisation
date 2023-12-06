@@ -60,7 +60,8 @@ class DataCleaning():
         '''
         store_df = table
 
-        store_df.dropna(how='all', inplace=True)
+        store_df.drop(columns='lat',inplace=True)
+        store_df.dropna(how='any', inplace=True)
         store_df['opening_date'] = pd.to_datetime(store_df['opening_date'], infer_datetime_format=True, errors='coerce')
         pattern = pattern = r'^[a-zA-Z0-9]*$'
         mask = (store_df['opening_date'].isna()) | (store_df['opening_date'].astype(str).str.contains(pattern))
